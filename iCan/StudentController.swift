@@ -18,8 +18,9 @@ class StudentController {
         let moc = Stack.sharedStack.managedObjectContext
         let request = NSFetchRequest(entityName: Student.studentKey)
         let sortDescriptor1 = NSSortDescriptor(key: Student.nameKey, ascending: true)
-        request.sortDescriptors = [sortDescriptor1]
-        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: Student.nameKey, cacheName: nil)
+        let sortDescriptor2 = NSSortDescriptor(key: Student.classroomNameKey, ascending: true)
+        request.sortDescriptors = [sortDescriptor1, sortDescriptor2]
+        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: Student.classroomNameKey, cacheName: nil)
         _ = try? fetchedResultsController.performFetch()
     }
     
