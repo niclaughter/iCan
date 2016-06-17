@@ -19,7 +19,7 @@ class StudentController {
         let request = NSFetchRequest(entityName: Student.studentKey)
         let sortDescriptor1 = NSSortDescriptor(key: Student.nameKey, ascending: true)
         request.sortDescriptors = [sortDescriptor1]
-        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: Student.classroomNameKey, cacheName: nil)
+        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: Student.nameKey, cacheName: nil)
         _ = try? fetchedResultsController.performFetch()
     }
     
@@ -41,6 +41,7 @@ class StudentController {
         student.parentsNames = parentsNames
         student.contact = contact
         student.assignments = assignments
+        saveToPersistentStore()
     }
     
     func saveToPersistentStore() {

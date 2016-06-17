@@ -11,7 +11,6 @@ import CoreData
 
 class StudentListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +55,7 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         guard let indexPath = tableView.indexPathForSelectedRow,
             detailVC = segue.destinationViewController as? StudentDetailViewController,
             student = StudentController.sharedStudentController.fetchedResultsController.objectAtIndexPath(indexPath) as? Student else { return }
-        detailVC.updateWithStudent(student)
+        detailVC.student = student
         
     }
     
@@ -66,6 +65,8 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         let alert = UIAlertController(title: "Add Student", message: "Enter your student's name.", preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (nameText) in
             nameText.placeholder = "Name"
+            nameText.autocapitalizationType = .Words
+            nameText.returnKeyType = .Done
         }
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (_) in
             guard let textField = alert.textFields?.first,

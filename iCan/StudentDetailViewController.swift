@@ -21,6 +21,10 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let student = self.student {
+            updateWithStudent(student)
+        }
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: self.view.window)
@@ -30,6 +34,7 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate {
         guard let student = student,
             name = nameTextField.text else { return true }
         StudentController.sharedStudentController.updateStudent(student, name: name, classroomName: classTextField.text, parentsNames: parentsTextField.text, contact: contactTextField.text)
+        textField.resignFirstResponder()
         return true
     }
     
@@ -72,9 +77,9 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate {
     func updateWithStudent(student: Student) {
         self.student = student
         nameTextField.text = student.name
-//        classTextField.text = student.classroomName
-//        parentsTextField.text = student.parentsNames
-//        contactTextField.text = student.contact
+        classTextField.text = student.classroomName
+        parentsTextField.text = student.parentsNames
+        contactTextField.text = student.contact
     }
     
 
