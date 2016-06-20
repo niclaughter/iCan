@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "660129BC1D130D1B0004C797"
+               BlueprintIdentifier = "669FCDBA1D1887100090551D"
                BuildableName = "iCan.app"
                BlueprintName = "iCan"
                ReferencedContainer = "container:iCan.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "660129BC1D130D1B0004C797"
+            BlueprintIdentifier = "669FCDBA1D1887100090551D"
             BuildableName = "iCan.app"
             BlueprintName = "iCan"
             ReferencedContainer = "container:iCan.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "660129BC1D130D1B0004C797"
+            BlueprintIdentifier = "669FCDBA1D1887100090551D"
             BuildableName = "iCan.app"
             BlueprintName = "iCan"
             ReferencedContainer = "container:iCan.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "660129BC1D130D1B0004C797"
+            BlueprintIdentifier = "669FCDBA1D1887100090551D"
             BuildableName = "iCan.app"
             BlueprintName = "iCan"
             ReferencedContainer = "container:iCan.xcodeproj">
