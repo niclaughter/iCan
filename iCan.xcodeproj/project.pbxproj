@@ -11,6 +11,22 @@
 		669FCDC41D1887100090551D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC21D1887100090551D /* Main.storyboard */; };
 		669FCDC61D1887100090551D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC51D1887100090551D /* Assets.xcassets */; };
 		669FCDC91D1887100090551D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC71D1887100090551D /* LaunchScreen.storyboard */; };
+		66E64E9F1D18D3A800CA602E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66E64E9D1D18D3A800CA602E /* Model.xcdatamodeld */; };
+		66E64EA61D18DA9600CA602E /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA01D18DA9600CA602E /* Student+CoreDataProperties.swift */; };
+		66E64EA71D18DA9600CA602E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA11D18DA9600CA602E /* Student.swift */; };
+		66E64EA81D18DA9600CA602E /* Evidence+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA21D18DA9600CA602E /* Evidence+CoreDataProperties.swift */; };
+		66E64EA91D18DA9600CA602E /* Evidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA31D18DA9600CA602E /* Evidence.swift */; };
+		66E64EAA1D18DA9600CA602E /* Objective+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA41D18DA9600CA602E /* Objective+CoreDataProperties.swift */; };
+		66E64EAB1D18DA9600CA602E /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA51D18DA9600CA602E /* Objective.swift */; };
+		66E64EAD1D18DAB600CA602E /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EAC1D18DAB600CA602E /* Stack.swift */; };
+		66E64EB01D18DB4D00CA602E /* StudentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EAF1D18DB4D00CA602E /* StudentListTableViewController.swift */; };
+		66E64EB21D18DB6900CA602E /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EB11D18DB6900CA602E /* StudentDetailViewController.swift */; };
+		66E64EB41D18DB7900CA602E /* ObjectiveListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EB31D18DB7900CA602E /* ObjectiveListTableViewController.swift */; };
+		66E64EB61D18DB8400CA602E /* ObjectiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EB51D18DB8400CA602E /* ObjectiveDetailViewController.swift */; };
+		66E64EB81D18DB9400CA602E /* AddEvidenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EB71D18DB9400CA602E /* AddEvidenceViewController.swift */; };
+		66E64EBB1D18DCBD00CA602E /* StudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EBA1D18DCBD00CA602E /* StudentController.swift */; };
+		66E64EBD1D18DCC500CA602E /* ObjectiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EBC1D18DCC500CA602E /* ObjectiveController.swift */; };
+		66E64EBF1D18DCCD00CA602E /* EvidenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EBE1D18DCCD00CA602E /* EvidenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +36,22 @@
 		669FCDC51D1887100090551D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		669FCDC81D1887100090551D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		669FCDCA1D1887100090551D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E64E9E1D18D3A800CA602E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		66E64EA01D18DA9600CA602E /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		66E64EA11D18DA9600CA602E /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		66E64EA21D18DA9600CA602E /* Evidence+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Evidence+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		66E64EA31D18DA9600CA602E /* Evidence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evidence.swift; sourceTree = "<group>"; };
+		66E64EA41D18DA9600CA602E /* Objective+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Objective+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		66E64EA51D18DA9600CA602E /* Objective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
+		66E64EAC1D18DAB600CA602E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		66E64EAF1D18DB4D00CA602E /* StudentListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentListTableViewController.swift; sourceTree = "<group>"; };
+		66E64EB11D18DB6900CA602E /* StudentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
+		66E64EB31D18DB7900CA602E /* ObjectiveListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveListTableViewController.swift; sourceTree = "<group>"; };
+		66E64EB51D18DB8400CA602E /* ObjectiveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveDetailViewController.swift; sourceTree = "<group>"; };
+		66E64EB71D18DB9400CA602E /* AddEvidenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEvidenceViewController.swift; sourceTree = "<group>"; };
+		66E64EBA1D18DCBD00CA602E /* StudentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentController.swift; sourceTree = "<group>"; };
+		66E64EBC1D18DCC500CA602E /* ObjectiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveController.swift; sourceTree = "<group>"; };
+		66E64EBE1D18DCCD00CA602E /* EvidenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvidenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +85,52 @@
 			isa = PBXGroup;
 			children = (
 				669FCDBE1D1887100090551D /* AppDelegate.swift */,
-				669FCDC21D1887100090551D /* Main.storyboard */,
+				66E64EB91D18DCA400CA602E /* ViewController */,
+				66E64EC01D18DCD300CA602E /* ModelController */,
+				66E64EAE1D18DB2E00CA602E /* Model */,
 				669FCDC51D1887100090551D /* Assets.xcassets */,
 				669FCDC71D1887100090551D /* LaunchScreen.storyboard */,
 				669FCDCA1D1887100090551D /* Info.plist */,
 			);
 			path = iCan;
+			sourceTree = "<group>";
+		};
+		66E64EAE1D18DB2E00CA602E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66E64EA01D18DA9600CA602E /* Student+CoreDataProperties.swift */,
+				66E64EA11D18DA9600CA602E /* Student.swift */,
+				66E64EA21D18DA9600CA602E /* Evidence+CoreDataProperties.swift */,
+				66E64EA31D18DA9600CA602E /* Evidence.swift */,
+				66E64EA41D18DA9600CA602E /* Objective+CoreDataProperties.swift */,
+				66E64EA51D18DA9600CA602E /* Objective.swift */,
+				66E64EAC1D18DAB600CA602E /* Stack.swift */,
+				66E64E9D1D18D3A800CA602E /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		66E64EB91D18DCA400CA602E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				669FCDC21D1887100090551D /* Main.storyboard */,
+				66E64EAF1D18DB4D00CA602E /* StudentListTableViewController.swift */,
+				66E64EB11D18DB6900CA602E /* StudentDetailViewController.swift */,
+				66E64EB31D18DB7900CA602E /* ObjectiveListTableViewController.swift */,
+				66E64EB51D18DB8400CA602E /* ObjectiveDetailViewController.swift */,
+				66E64EB71D18DB9400CA602E /* AddEvidenceViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		66E64EC01D18DCD300CA602E /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				66E64EBA1D18DCBD00CA602E /* StudentController.swift */,
+				66E64EBC1D18DCC500CA602E /* ObjectiveController.swift */,
+				66E64EBE1D18DCCD00CA602E /* EvidenceController.swift */,
+			);
+			name = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,7 +204,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E64EA61D18DA9600CA602E /* Student+CoreDataProperties.swift in Sources */,
+				66E64EB01D18DB4D00CA602E /* StudentListTableViewController.swift in Sources */,
+				66E64EB61D18DB8400CA602E /* ObjectiveDetailViewController.swift in Sources */,
+				66E64EBD1D18DCC500CA602E /* ObjectiveController.swift in Sources */,
+				66E64EAD1D18DAB600CA602E /* Stack.swift in Sources */,
 				669FCDBF1D1887100090551D /* AppDelegate.swift in Sources */,
+				66E64EA91D18DA9600CA602E /* Evidence.swift in Sources */,
+				66E64E9F1D18D3A800CA602E /* Model.xcdatamodeld in Sources */,
+				66E64EA71D18DA9600CA602E /* Student.swift in Sources */,
+				66E64EBF1D18DCCD00CA602E /* EvidenceController.swift in Sources */,
+				66E64EAB1D18DA9600CA602E /* Objective.swift in Sources */,
+				66E64EA81D18DA9600CA602E /* Evidence+CoreDataProperties.swift in Sources */,
+				66E64EBB1D18DCBD00CA602E /* StudentController.swift in Sources */,
+				66E64EB21D18DB6900CA602E /* StudentDetailViewController.swift in Sources */,
+				66E64EB81D18DB9400CA602E /* AddEvidenceViewController.swift in Sources */,
+				66E64EAA1D18DA9600CA602E /* Objective+CoreDataProperties.swift in Sources */,
+				66E64EB41D18DB7900CA602E /* ObjectiveListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +375,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		66E64E9D1D18D3A800CA602E /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				66E64E9E1D18D3A800CA602E /* Model.xcdatamodel */,
+			);
+			currentVersion = 66E64E9E1D18D3A800CA602E /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 669FCDB31D1887100090551D /* Project object */;
 }
