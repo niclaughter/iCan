@@ -100,10 +100,10 @@
 			children = (
 				66E64EA01D18DA9600CA602E /* Student+CoreDataProperties.swift */,
 				66E64EA11D18DA9600CA602E /* Student.swift */,
-				66E64EA21D18DA9600CA602E /* Evidence+CoreDataProperties.swift */,
-				66E64EA31D18DA9600CA602E /* Evidence.swift */,
 				66E64EA41D18DA9600CA602E /* Objective+CoreDataProperties.swift */,
 				66E64EA51D18DA9600CA602E /* Objective.swift */,
+				66E64EA21D18DA9600CA602E /* Evidence+CoreDataProperties.swift */,
+				66E64EA31D18DA9600CA602E /* Evidence.swift */,
 				66E64EAC1D18DAB600CA602E /* Stack.swift */,
 				66E64E9D1D18D3A800CA602E /* Model.xcdatamodeld */,
 			);

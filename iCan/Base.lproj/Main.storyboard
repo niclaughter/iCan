@@ -23,25 +23,22 @@
             </objects>
             <point key="canvasLocation" x="660" y="660"/>
         </scene>
-        <!--Title-->
+        <!--Students-->
         <scene sceneID="pHE-FN-UB2">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="x1i-gw-ECW" customClass="StudentListTableViewController" customModule="iCan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Students" clearsSelectionOnViewWillAppear="NO" id="x1i-gw-ECW" customClass="StudentListTableViewController" customModule="iCan" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rMe-ai-Z2j">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="objectiveCell" id="v9M-K7-dc1">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" id="v9M-K7-dc1">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v9M-K7-dc1" id="Ph2-tT-Sns">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="qEd-2U-fUY" kind="showDetail" id="cRh-wM-1bP"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,13 +46,21 @@
                             <outlet property="delegate" destination="x1i-gw-ECW" id="7b6-9Y-xaD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="0V6-07-xaC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dWg-KB-Z9G"/>
+                    <navigationItem key="navigationItem" title="Students" id="0V6-07-xaC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dWg-KB-Z9G">
+                            <connections>
+                                <action selector="addStudentButtonTapped:" destination="x1i-gw-ECW" id="Wtd-cr-mxm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="IBg-y8-2h9"/>
+                        <segue destination="qEd-2U-fUY" kind="showDetail" identifier="studentDetailSegue" id="reF-xb-uGC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwS-tj-ivb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2279" y="-914"/>
+            <point key="canvasLocation" x="2279" y="-1018"/>
         </scene>
         <!--Student Detail View Controller-->
         <scene sceneID="73t-3p-LhH">
@@ -80,7 +85,11 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="uYs-qX-V6H"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="uYs-qX-V6H">
+                                            <connections>
+                                                <segue destination="Gmo-9V-uzv" kind="presentation" identifier="addSegue" id="wpZ-Wj-XTe"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -110,6 +119,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6JR-gK-WdN">
                                 <rect key="frame" x="0.0" y="93" width="600" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="evidenceCell" id="J32-tr-AHo">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J32-tr-AHo" id="WNi-GR-wMY">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Aee-c1-q0F" kind="presentation" id="vpY-SY-iBo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="qEd-2U-fUY" id="LbU-w9-CxH"/>
                                     <outlet property="delegate" destination="qEd-2U-fUY" id="NCJ-Ng-Mr8"/>
@@ -132,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzU-yn-ULo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016" y="-914"/>
+            <point key="canvasLocation" x="3016" y="-1018"/>
         </scene>
         <!--Objective Detail View Controller-->
         <scene sceneID="mOX-hj-rqq">
@@ -157,7 +179,11 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="Lfc-Zf-UpP"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="Lfc-Zf-UpP">
+                                            <connections>
+                                                <segue destination="x1i-gw-ECW" kind="presentation" identifier="addSegue" id="1ap-Ku-8IR"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -200,7 +226,7 @@
         <!--Add Evidence View Controller-->
         <scene sceneID="RkK-Rl-ja8">
             <objects>
-                <viewController id="Aee-c1-q0F" customClass="AddEvidenceViewController" customModule="iCan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addEvidenceViewController" id="Aee-c1-q0F" customClass="AddEvidenceViewController" customModule="iCan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mcf-YY-2Xk"/>
                         <viewControllerLayoutGuide type="bottom" id="5g9-cX-sQX"/>
@@ -213,13 +239,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIp-5R-2Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016" y="660"/>
+            <point key="canvasLocation" x="3016" y="-1760"/>
         </scene>
         <!--Students-->
         <scene sceneID="ZSt-dW-uZ1">
             <objects>
                 <navigationController id="Onr-ah-ve6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Students" id="23e-zZ-hx1"/>
+                    <tabBarItem key="tabBarItem" title="Students" image="Student" id="23e-zZ-hx1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bcT-Ox-PDl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -230,7 +256,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2O6-PZ-Jjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1539" y="-914"/>
+            <point key="canvasLocation" x="1539" y="-1018"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="33o-Cv-Rrs">
@@ -263,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="660" y="-224"/>
         </scene>
-        <!--Title-->
+        <!--Objectives-->
         <scene sceneID="zIS-sz-N0d">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="Gmo-9V-uzv" customClass="ObjectiveListTableViewController" customModule="iCan" customModuleProvider="target" sceneMemberID="viewController">
@@ -272,16 +298,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" id="110-5a-SND">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="objectiveCell" id="110-5a-SND">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="110-5a-SND" id="1gx-xY-IDO">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="z5P-7N-z8h" kind="showDetail" id="LTX-Ng-K2T"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -289,9 +312,17 @@
                             <outlet property="delegate" destination="Gmo-9V-uzv" id="JDm-qV-ApY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Vrz-To-v2g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VAH-PZ-Ar5"/>
+                    <navigationItem key="navigationItem" title="Objectives" id="Vrz-To-v2g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VAH-PZ-Ar5">
+                            <connections>
+                                <action selector="addObjectiveButtonTapped:" destination="Gmo-9V-uzv" id="eds-V1-Ezt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="0y4-td-XIQ"/>
+                        <segue destination="z5P-7N-z8h" kind="showDetail" identifier="objectiveDetailSegue" id="due-7n-hiU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgS-mU-rIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,7 +332,7 @@
         <scene sceneID="lVi-EH-MPj">
             <objects>
                 <navigationController id="tlO-Tx-2fw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Objectives" id="mGN-2p-2g2"/>
+                    <tabBarItem key="tabBarItem" title="Objectives" image="Star" id="mGN-2p-2g2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xTu-96-Nmk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -315,4 +346,13 @@
             <point key="canvasLocation" x="1539" y="-224"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Star" width="45" height="44"/>
+        <image name="Student" width="42" height="49"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1ap-Ku-8IR"/>
+        <segue reference="wpZ-Wj-XTe"/>
+        <segue reference="0y4-td-XIQ"/>
+    </inferredMetricsTieBreakers>
 </document>
