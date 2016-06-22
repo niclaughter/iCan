@@ -11,6 +11,8 @@ import UIKit
 class ObjectiveDetailViewController: UIViewController {
     
     var objective: Objective?
+    @IBOutlet weak var objectiveTitleTextField: UITextField!
+    @IBOutlet weak var notesTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,17 @@ class ObjectiveDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - IBAction
+    
+    @IBAction func addEvidenceButtonTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+    }
 
+    @IBAction func clearButtonTapped(sender: AnyObject) {
+    }
+    
     /*
     // MARK: - Navigation
 
