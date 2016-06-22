@@ -14,12 +14,11 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addEvidence = false
         setUpFetchedResultsController()
     }
     
     var fetchedResultsController: NSFetchedResultsController?
-    var addEvidence: Bool?
+    var addEvidence: Bool? = false
     var student: Student?
     
     // MARK: - IBAction

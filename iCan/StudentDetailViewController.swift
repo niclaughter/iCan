@@ -43,5 +43,8 @@ class StudentDetailViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let destinationVC = segue.destinationViewController as? ObjectiveListTableViewController else { return }
+        destinationVC.addEvidence = true
+        destinationVC.student = student
     }
 }

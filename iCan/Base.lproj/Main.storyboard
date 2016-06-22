@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -55,7 +54,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="IBg-y8-2h9"/>
+                        <segue destination="Aee-c1-q0F" kind="presentation" identifier="addEvidenceSegue" id="IBg-y8-2h9"/>
                         <segue destination="qEd-2U-fUY" kind="showDetail" identifier="studentDetailSegue" id="reF-xb-uGC"/>
                     </connections>
                 </tableViewController>
@@ -92,7 +91,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="uYs-qX-V6H">
                                             <connections>
                                                 <action selector="addEvidenceButtonTapped:" destination="qEd-2U-fUY" id="tw6-sC-eeN"/>
-                                                <segue destination="Gmo-9V-uzv" kind="presentation" identifier="addSegue" id="wpZ-Wj-XTe"/>
+                                                <segue destination="Gmo-9V-uzv" kind="showDetail" identifier="addSegue" id="wpZ-Wj-XTe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -192,7 +191,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="Lfc-Zf-UpP">
                                             <connections>
                                                 <action selector="addEvidenceButtonTapped:" destination="z5P-7N-z8h" id="e0L-lO-Zj4"/>
-                                                <segue destination="x1i-gw-ECW" kind="presentation" identifier="addSegue" id="1ap-Ku-8IR"/>
+                                                <segue destination="x1i-gw-ECW" kind="showDetail" identifier="addSegue" id="1ap-Ku-8IR"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -258,110 +257,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gFt-pM-8Uh">
-                                <rect key="frame" x="8" y="399" width="584" height="190"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iDH-sh-Piv">
+                                <rect key="frame" x="0.0" y="72" width="600" height="21"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gar-Oo-qCB">
-                                        <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
-                                        <gestureRecognizers/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTD-BD-Me1">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="gar-Oo-qCB" secondAttribute="height" multiplier="1:1" id="Vly-Hz-bjW"/>
+                                            <constraint firstAttribute="height" constant="21" id="QFO-1j-Srl"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="7Wc-Xc-fqi" appends="YES" id="oAP-PF-AgX"/>
-                                        </connections>
-                                    </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OK" translatesAutoresizingMaskIntoConstraints="NO" id="c47-tI-Os5">
-                                        <rect key="frame" x="198" y="0.0" width="189" height="190"/>
-                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objective Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vS-Fe-fAr">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="c47-tI-Os5" secondAttribute="height" multiplier="1:1" id="0BY-Tb-Jfw"/>
+                                            <constraint firstAttribute="height" constant="21" id="eq1-xW-kaj"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="XwM-br-leh" appends="YES" id="iMD-CB-hdH"/>
-                                        </connections>
-                                    </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0m-bF-PIX">
-                                        <rect key="frame" x="395" y="0.0" width="190" height="190"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="q0m-bF-PIX" secondAttribute="height" multiplier="1:1" id="Xoa-fz-ero"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="clq-u3-fUZ" appends="YES" id="zyG-d7-En7"/>
-                                        </connections>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTD-BD-Me1">
-                                <rect key="frame" x="0.0" y="20" width="600" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objective Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vS-Fe-fAr">
-                                <rect key="frame" x="0.0" y="49" width="600" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="selectImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-ja-LH9">
-                                <rect key="frame" x="8" y="78" width="584" height="313"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="67o-Bt-oeQ" appends="YES" id="CC6-2c-9GW"/>
-                                </connections>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Os-HR-bsZ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZMk-fX-sch"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FOn-bY-xW2"/>
+                                    <barButtonItem systemItem="cancel" id="Yhw-KA-wSY">
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="Aee-c1-q0F" id="PDL-1E-XIG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="C2K-tJ-yc1"/>
+                                    <barButtonItem systemItem="save" id="VBt-eQ-fU0">
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="Aee-c1-q0F" id="0k2-1E-oqi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NTw-DP-zwO"/>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vV8-6A-okb">
+                                <rect key="frame" x="8" y="460" width="584" height="132"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-V5-kjH">
+                                        <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="132" id="9E5-Dm-yqc"/>
+                                            <constraint firstAttribute="width" constant="132" id="QHk-Fb-wp4"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="NO"/>
+                                        <connections>
+                                            <action selector="noButtonTapped:" destination="Aee-c1-q0F" eventType="touchUpInside" id="XCk-nS-RLK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ql-8f-mtk">
+                                        <rect key="frame" x="226" y="0.0" width="132" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="132" id="hmq-mW-4wl"/>
+                                            <constraint firstAttribute="height" constant="132" id="l8n-Nd-OUX"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="OK"/>
+                                        <connections>
+                                            <action selector="okButtonTapped:" destination="Aee-c1-q0F" eventType="touchUpInside" id="Uib-Gs-lyD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh3-Ne-Yie">
+                                        <rect key="frame" x="452" y="0.0" width="132" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="132" id="2Mb-Y5-hBs"/>
+                                            <constraint firstAttribute="width" constant="132" id="Anc-9p-vgN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="YES"/>
+                                        <connections>
+                                            <action selector="yesButtonTapped:" destination="Aee-c1-q0F" eventType="touchUpInside" id="k9B-xK-2yU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="0vt-aW-pJ0"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L5P-7C-mJC">
+                                <rect key="frame" x="8" y="101" width="584" height="351"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQY-m3-3Zd">
+                                <rect key="frame" x="8" y="101" width="584" height="351"/>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="selectPhotoButtonTapped" destination="Aee-c1-q0F" eventType="touchUpInside" id="WUW-yL-Amh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QVk-ja-LH9" firstAttribute="top" secondItem="0vS-Fe-fAr" secondAttribute="bottom" constant="8" id="0PI-IY-9lE"/>
-                            <constraint firstItem="gFt-pM-8Uh" firstAttribute="top" secondItem="QVk-ja-LH9" secondAttribute="bottom" constant="8" id="6dr-o1-rAT"/>
-                            <constraint firstAttribute="trailing" secondItem="0vS-Fe-fAr" secondAttribute="trailing" id="DQp-cV-2PF"/>
-                            <constraint firstItem="XTD-BD-Me1" firstAttribute="top" secondItem="mcf-YY-2Xk" secondAttribute="bottom" id="EVZ-qu-pC9"/>
-                            <constraint firstItem="0vS-Fe-fAr" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" id="GqA-nZ-K3e"/>
-                            <constraint firstItem="QVk-ja-LH9" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" constant="8" id="Nt5-J1-5Xd"/>
-                            <constraint firstAttribute="trailing" secondItem="XTD-BD-Me1" secondAttribute="trailing" id="VFO-9x-ZPS"/>
-                            <constraint firstAttribute="trailing" secondItem="QVk-ja-LH9" secondAttribute="trailing" constant="8" id="Z79-a1-igm"/>
-                            <constraint firstItem="gFt-pM-8Uh" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" constant="8" id="aGL-x3-cJL"/>
-                            <constraint firstItem="XTD-BD-Me1" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" id="aWJ-co-6xl"/>
-                            <constraint firstItem="5g9-cX-sQX" firstAttribute="top" secondItem="gFt-pM-8Uh" secondAttribute="bottom" constant="12" id="c9u-yQ-e2o"/>
-                            <constraint firstItem="0vS-Fe-fAr" firstAttribute="top" secondItem="XTD-BD-Me1" secondAttribute="bottom" constant="8" id="jga-yF-Lmz"/>
-                            <constraint firstAttribute="trailing" secondItem="gFt-pM-8Uh" secondAttribute="trailing" constant="8" id="z3l-zS-HUt"/>
+                            <constraint firstItem="L5P-7C-mJC" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" constant="8" id="2Ed-jc-sgZ"/>
+                            <constraint firstItem="vV8-6A-okb" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" constant="8" id="32e-ae-AcA"/>
+                            <constraint firstAttribute="trailing" secondItem="iDH-sh-Piv" secondAttribute="trailing" id="41a-Rg-4Ef"/>
+                            <constraint firstAttribute="trailing" secondItem="L5P-7C-mJC" secondAttribute="trailing" constant="8" id="5h3-W2-Qoc"/>
+                            <constraint firstItem="iDH-sh-Piv" firstAttribute="top" secondItem="2Os-HR-bsZ" secondAttribute="bottom" constant="8" id="MvN-dq-pGt"/>
+                            <constraint firstAttribute="trailing" secondItem="lQY-m3-3Zd" secondAttribute="trailing" constant="8" id="Pj2-Yo-EFi"/>
+                            <constraint firstAttribute="trailing" secondItem="vV8-6A-okb" secondAttribute="trailing" constant="8" id="Wbs-pu-3zw"/>
+                            <constraint firstItem="lQY-m3-3Zd" firstAttribute="top" secondItem="iDH-sh-Piv" secondAttribute="bottom" constant="8" id="Wn5-rU-kHW"/>
+                            <constraint firstItem="vV8-6A-okb" firstAttribute="top" secondItem="lQY-m3-3Zd" secondAttribute="bottom" constant="8" id="aKc-Ol-bnh"/>
+                            <constraint firstItem="L5P-7C-mJC" firstAttribute="top" secondItem="iDH-sh-Piv" secondAttribute="bottom" constant="8" id="aU1-eI-Xg7"/>
+                            <constraint firstItem="2Os-HR-bsZ" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" id="cB7-db-2y9"/>
+                            <constraint firstItem="5g9-cX-sQX" firstAttribute="top" secondItem="vV8-6A-okb" secondAttribute="bottom" constant="8" id="d3O-rx-f9d"/>
+                            <constraint firstAttribute="trailing" secondItem="2Os-HR-bsZ" secondAttribute="trailing" id="d9W-Jk-gYf"/>
+                            <constraint firstItem="vV8-6A-okb" firstAttribute="top" secondItem="L5P-7C-mJC" secondAttribute="bottom" constant="8" id="h7v-Oa-vgW"/>
+                            <constraint firstItem="2Os-HR-bsZ" firstAttribute="top" secondItem="mcf-YY-2Xk" secondAttribute="bottom" id="j38-cy-xzq"/>
+                            <constraint firstItem="iDH-sh-Piv" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" id="l0r-53-LXV"/>
+                            <constraint firstItem="lQY-m3-3Zd" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" constant="8" id="y1H-4X-CeX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="noTapGestureRecognizer" destination="7Wc-Xc-fqi" id="3P9-IB-GgK"/>
-                        <outlet property="passTapGestureRecognizer" destination="XwM-br-leh" id="vsa-0G-h7r"/>
-                        <outlet property="selectImageTapGestureRecognizer" destination="67o-Bt-oeQ" id="gAz-H8-aax"/>
-                        <outlet property="yesTapGestureRecognizer" destination="clq-u3-fUZ" id="raU-e8-mRE"/>
+                        <outlet property="addPhotoButton" destination="lQY-m3-3Zd" id="ucM-L8-rVY"/>
+                        <outlet property="imageView" destination="L5P-7C-mJC" id="mKd-zf-MxM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIp-5R-2Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="67o-Bt-oeQ">
-                    <connections>
-                        <action selector="selectImageTapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="H7s-NX-Z4o"/>
-                        <outlet property="delegate" destination="Aee-c1-q0F" id="aSS-tM-2cj"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="7Wc-Xc-fqi">
-                    <connections>
-                        <action selector="noTapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="x72-7B-STd"/>
-                        <outlet property="delegate" destination="Aee-c1-q0F" id="PDl-Ty-F9e"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="XwM-br-leh">
-                    <connections>
-                        <action selector="passTapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="0yK-5c-TUl"/>
-                        <outlet property="delegate" destination="Aee-c1-q0F" id="t3N-tJ-9B9"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="clq-u3-fUZ">
-                    <connections>
-                        <action selector="TapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="WtH-TC-lh4"/>
-                        <outlet property="delegate" destination="Aee-c1-q0F" id="clR-au-TEU"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3016" y="-1760"/>
         </scene>
@@ -444,7 +462,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="0y4-td-XIQ"/>
+                        <segue destination="Aee-c1-q0F" kind="presentation" identifier="addEvidenceSegue" id="0y4-td-XIQ"/>
                         <segue destination="z5P-7N-z8h" kind="showDetail" identifier="objectiveDetailSegue" id="due-7n-hiU"/>
                     </connections>
                 </tableViewController>
@@ -476,11 +494,10 @@
         <image name="Star" width="45" height="44"/>
         <image name="Student" width="42" height="49"/>
         <image name="YES" width="1024" height="1024"/>
-        <image name="selectImagePlaceholder" width="500" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1ap-Ku-8IR"/>
         <segue reference="wpZ-Wj-XTe"/>
-        <segue reference="vpY-SY-iBo"/>
+        <segue reference="IBg-y8-2h9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -28,6 +28,7 @@ class ObjectiveDetailViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func addEvidenceButtonTapped(sender: AnyObject) {
+        
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
@@ -36,14 +37,11 @@ class ObjectiveDetailViewController: UIViewController {
     @IBAction func clearButtonTapped(sender: AnyObject) {
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard let destinationVC = segue.destinationViewController as? StudentListTableViewController else { return }
+        destinationVC.addEvidence = true
+        destinationVC.objective = objective
     }
-    */
-
 }

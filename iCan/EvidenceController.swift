@@ -36,8 +36,3 @@ class EvidenceController {
         }
     }
 }
-
-protocol AddEvidenceSegueDelegate {
-    
-    var addEvidence: Bool { get set }
-}
