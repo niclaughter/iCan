@@ -45,6 +45,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func saveButtonTapped(sender: AnyObject) {
         guard let student = student,
             objective = objective,
+            rating = rating,
             image = imageView.image,
             imageRepresentation = UIImagePNGRepresentation(image) else { return }
         EvidenceController.shared.createEvidence(imageRepresentation, competencyRating: rating, student: student, objective: objective)
@@ -68,6 +69,10 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
             }))
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        if let popoverPresentationController = alert.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0 - 105, self.view.bounds.size.height / 2.0 + 70, 1.0, 1.0)
+        }
         presentViewController(alert, animated: true, completion: nil)
     }
     

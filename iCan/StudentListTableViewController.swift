@@ -9,15 +9,17 @@
 import UIKit
 import CoreData
 
-class StudentListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class StudentListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISplitViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        splitViewController?.delegate = self
         setUpFetchedResultsController()
     }
     
     var fetchedResultsController: NSFetchedResultsController?
+    private var collapseDetailViewController = true
     var addEvidence: Bool? = false
     var objective: Objective?
     

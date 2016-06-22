@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663819B61D1B490C003B2530 /* DefaultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663819B51D1B490C003B2530 /* DefaultDetailViewController.swift */; };
 		669FCDBF1D1887100090551D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669FCDBE1D1887100090551D /* AppDelegate.swift */; };
 		669FCDC41D1887100090551D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC21D1887100090551D /* Main.storyboard */; };
 		669FCDC61D1887100090551D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC51D1887100090551D /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		663819B51D1B490C003B2530 /* DefaultDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDetailViewController.swift; sourceTree = "<group>"; };
 		669FCDBB1D1887100090551D /* iCan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669FCDBE1D1887100090551D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669FCDC31D1887100090551D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				669FCDC21D1887100090551D /* Main.storyboard */,
+				663819B51D1B490C003B2530 /* DefaultDetailViewController.swift */,
 				66E64EAF1D18DB4D00CA602E /* StudentListTableViewController.swift */,
 				66E64EB11D18DB6900CA602E /* StudentDetailViewController.swift */,
 				66E64EB31D18DB7900CA602E /* ObjectiveListTableViewController.swift */,
@@ -217,6 +220,7 @@
 				66E64EAB1D18DA9600CA602E /* Objective.swift in Sources */,
 				66E64EA81D18DA9600CA602E /* Evidence+CoreDataProperties.swift in Sources */,
 				66E64EBB1D18DCBD00CA602E /* StudentController.swift in Sources */,
+				663819B61D1B490C003B2530 /* DefaultDetailViewController.swift in Sources */,
 				66E64EB21D18DB6900CA602E /* StudentDetailViewController.swift in Sources */,
 				66E64EB81D18DB9400CA602E /* AddEvidenceViewController.swift in Sources */,
 				66E64EAA1D18DA9600CA602E /* Objective+CoreDataProperties.swift in Sources */,
