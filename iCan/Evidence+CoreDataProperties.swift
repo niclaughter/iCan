@@ -14,7 +14,7 @@ import CoreData
 
 extension Evidence {
 
-    @NSManaged var competencyRating: NSNumber?
+    @NSManaged var competencyRating: NSNumber
     @NSManaged var imageData: NSData
     @NSManaged var objective: Objective
     @NSManaged var student: Student

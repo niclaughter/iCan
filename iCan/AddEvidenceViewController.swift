@@ -12,7 +12,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     
     var student: Student?
     var objective: Objective?
-    var rating: NSNumber?
+    var rating: Int?
     
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -48,6 +48,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
             image = imageView.image,
             imageRepresentation = UIImagePNGRepresentation(image) else { return }
         EvidenceController.shared.createEvidence(imageRepresentation, competencyRating: rating, student: student, objective: objective)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func selectPhotoButtonTapped() {

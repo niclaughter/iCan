@@ -136,6 +136,8 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         let alert = UIAlertController(title: "Add an objective", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (studentCan) in
             studentCan.placeholder = "Student can..."
+            studentCan.autocapitalizationType = .Sentences
+            studentCan.returnKeyType = .Done
         }
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (_) in
             guard let textField = alert.textFields?.first,

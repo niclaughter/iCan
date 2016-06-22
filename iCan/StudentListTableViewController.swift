@@ -136,6 +136,8 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         let alert = UIAlertController(title: "Add a student", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (name) in
             name.placeholder = "Student name"
+            name.autocapitalizationType = .Words
+            name.returnKeyType = .Done
         }
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (_) in
             guard let textField = alert.textFields?.first,
