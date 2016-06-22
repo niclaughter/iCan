@@ -8,28 +8,40 @@
 
 import UIKit
 
-class StudentDetailViewController: UIViewController {
+class StudentDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var student: Student?
+    @IBOutlet weak var studentNameTextField: UITextField!
+    @IBOutlet weak var ratioLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        guard let student = student else { return }
+        studentNameTextField.text = student.name
+        ratioLabel.text = "\(student.numberPassed)/\(student.evidence.count)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - IBAction
+    
+    @IBAction func addEvidenceButtonTapped(sender: AnyObject) {
     }
-    */
-
+    
+    // MARK: - TableViewDataSource and Delegate
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return student?.evidence.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Default, reuseIdentifier: "evidenceCell")
+        guard let evidence = student?.evidence[indexPath.row] as? Evidence else { return cell }
+        cell.textLabel?.text = evidence.objective.studentCan
+        return cell
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    }
 }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -87,6 +88,7 @@
                                         </textField>
                                         <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="uYs-qX-V6H">
                                             <connections>
+                                                <action selector="addEvidenceButtonTapped:" destination="qEd-2U-fUY" id="tw6-sC-eeN"/>
                                                 <segue destination="Gmo-9V-uzv" kind="presentation" identifier="addSegue" id="wpZ-Wj-XTe"/>
                                             </connections>
                                         </barButtonItem>
@@ -151,6 +153,10 @@
                             <constraint firstItem="YK1-Jr-l3h" firstAttribute="centerX" secondItem="dkE-np-c42" secondAttribute="centerX" id="xx2-2P-PrK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ratioLabel" destination="S3P-X0-XQF" id="HXZ-LB-qOe"/>
+                        <outlet property="studentNameTextField" destination="9pC-GI-ooq" id="odF-cY-Yp6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzU-yn-ULo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,10 +240,111 @@
                     <view key="view" contentMode="scaleToFill" id="K02-84-UzR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gFt-pM-8Uh">
+                                <rect key="frame" x="8" y="399" width="584" height="190"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gar-Oo-qCB">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gar-Oo-qCB" secondAttribute="height" multiplier="1:1" id="Vly-Hz-bjW"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="7Wc-Xc-fqi" appends="YES" id="oAP-PF-AgX"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OK" translatesAutoresizingMaskIntoConstraints="NO" id="c47-tI-Os5">
+                                        <rect key="frame" x="198" y="0.0" width="189" height="190"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="c47-tI-Os5" secondAttribute="height" multiplier="1:1" id="0BY-Tb-Jfw"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="XwM-br-leh" appends="YES" id="iMD-CB-hdH"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0m-bF-PIX">
+                                        <rect key="frame" x="395" y="0.0" width="190" height="190"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="q0m-bF-PIX" secondAttribute="height" multiplier="1:1" id="Xoa-fz-ero"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="clq-u3-fUZ" appends="YES" id="zyG-d7-En7"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTD-BD-Me1">
+                                <rect key="frame" x="0.0" y="20" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objective Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vS-Fe-fAr">
+                                <rect key="frame" x="0.0" y="49" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="selectImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-ja-LH9">
+                                <rect key="frame" x="8" y="78" width="584" height="313"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="67o-Bt-oeQ" appends="YES" id="CC6-2c-9GW"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QVk-ja-LH9" firstAttribute="top" secondItem="0vS-Fe-fAr" secondAttribute="bottom" constant="8" id="0PI-IY-9lE"/>
+                            <constraint firstItem="gFt-pM-8Uh" firstAttribute="top" secondItem="QVk-ja-LH9" secondAttribute="bottom" constant="8" id="6dr-o1-rAT"/>
+                            <constraint firstAttribute="trailing" secondItem="0vS-Fe-fAr" secondAttribute="trailing" id="DQp-cV-2PF"/>
+                            <constraint firstItem="XTD-BD-Me1" firstAttribute="top" secondItem="mcf-YY-2Xk" secondAttribute="bottom" id="EVZ-qu-pC9"/>
+                            <constraint firstItem="0vS-Fe-fAr" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" id="GqA-nZ-K3e"/>
+                            <constraint firstItem="QVk-ja-LH9" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" constant="8" id="Nt5-J1-5Xd"/>
+                            <constraint firstAttribute="trailing" secondItem="XTD-BD-Me1" secondAttribute="trailing" id="VFO-9x-ZPS"/>
+                            <constraint firstAttribute="trailing" secondItem="QVk-ja-LH9" secondAttribute="trailing" constant="8" id="Z79-a1-igm"/>
+                            <constraint firstItem="gFt-pM-8Uh" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" constant="8" id="aGL-x3-cJL"/>
+                            <constraint firstItem="XTD-BD-Me1" firstAttribute="leading" secondItem="K02-84-UzR" secondAttribute="leading" id="aWJ-co-6xl"/>
+                            <constraint firstItem="5g9-cX-sQX" firstAttribute="top" secondItem="gFt-pM-8Uh" secondAttribute="bottom" constant="12" id="c9u-yQ-e2o"/>
+                            <constraint firstItem="0vS-Fe-fAr" firstAttribute="top" secondItem="XTD-BD-Me1" secondAttribute="bottom" constant="8" id="jga-yF-Lmz"/>
+                            <constraint firstAttribute="trailing" secondItem="gFt-pM-8Uh" secondAttribute="trailing" constant="8" id="z3l-zS-HUt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noTapGestureRecognizer" destination="7Wc-Xc-fqi" id="3P9-IB-GgK"/>
+                        <outlet property="passTapGestureRecognizer" destination="XwM-br-leh" id="vsa-0G-h7r"/>
+                        <outlet property="selectImageTapGestureRecognizer" destination="67o-Bt-oeQ" id="gAz-H8-aax"/>
+                        <outlet property="yesTapGestureRecognizer" destination="clq-u3-fUZ" id="raU-e8-mRE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIp-5R-2Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="67o-Bt-oeQ">
+                    <connections>
+                        <action selector="selectImageTapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="H7s-NX-Z4o"/>
+                        <outlet property="delegate" destination="Aee-c1-q0F" id="aSS-tM-2cj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="7Wc-Xc-fqi">
+                    <connections>
+                        <action selector="noTapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="x72-7B-STd"/>
+                        <outlet property="delegate" destination="Aee-c1-q0F" id="PDl-Ty-F9e"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XwM-br-leh">
+                    <connections>
+                        <action selector="passTapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="0yK-5c-TUl"/>
+                        <outlet property="delegate" destination="Aee-c1-q0F" id="t3N-tJ-9B9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="clq-u3-fUZ">
+                    <connections>
+                        <action selector="TapGestureRecognizerTapped:" destination="Aee-c1-q0F" id="WtH-TC-lh4"/>
+                        <outlet property="delegate" destination="Aee-c1-q0F" id="clR-au-TEU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3016" y="-1760"/>
         </scene>
@@ -347,12 +454,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NO" width="225" height="225"/>
+        <image name="OK" width="800" height="800"/>
         <image name="Star" width="45" height="44"/>
         <image name="Student" width="42" height="49"/>
+        <image name="YES" width="1024" height="1024"/>
+        <image name="selectImagePlaceholder" width="500" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1ap-Ku-8IR"/>
         <segue reference="wpZ-Wj-XTe"/>
-        <segue reference="0y4-td-XIQ"/>
+        <segue reference="vpY-SY-iBo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,4 +18,18 @@ class AddEvidenceViewController: UIViewController {
         
         
     }
+    
+    // MARK: - IBActions
+    
+    @IBAction func selectImageTapGestureRecognizerTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func noTapGestureRecognizerTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func passTapGestureRecognizerTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func TapGestureRecognizerTapped(sender: AnyObject) {
+    }
 }

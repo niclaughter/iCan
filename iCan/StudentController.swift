@@ -7,10 +7,19 @@
 //
 
 import Foundation
+import CoreData
 
 class StudentController {
     
     static let shared = StudentController()
+    
+    var students: [Student] {
+        let fetchRequest = NSFetchRequest(entityName: Student.typeKey)
+        let sortDescriptor = NSSortDescriptor(key: Student.nameKey, ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [Student] ?? []
+        return results
+    }
     
     func createStudent(name: String) {
         _ = Student(name: name)

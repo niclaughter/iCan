@@ -9,6 +9,8 @@
 import UIKit
 
 class ObjectiveDetailViewController: UIViewController {
+    
+    var objective: Objective?
 
     override func viewDidLoad() {
         super.viewDidLoad()

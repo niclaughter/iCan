@@ -13,8 +13,9 @@ import CoreData
 class Objective: NSManagedObject {
     
     static let typeKey = "Objective"
+    static let studentCanKey = "studentCan"
     
-    convenience init(studentCan: String, notes: String?, evidence: NSSet = [], context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(studentCan: String, notes: String?, evidence: NSOrderedSet = [], context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName(Objective.typeKey, inManagedObjectContext: context) else { fatalError("Failed to create entity from moc") }
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         

@@ -9,16 +9,16 @@
     <entity name="Objective" representedClassName=".Objective" syncable="YES">
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="studentCan" attributeType="String" syncable="YES"/>
-        <relationship name="evidence" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Evidence" inverseName="objective" inverseEntity="Evidence" syncable="YES"/>
+        <relationship name="evidence" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Evidence" inverseName="objective" inverseEntity="Evidence" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName=".Student" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="numberPassed" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="evidence" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Evidence" inverseName="student" inverseEntity="Evidence" syncable="YES"/>
+        <relationship name="evidence" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Evidence" inverseName="student" inverseEntity="Evidence" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Student" positionX="-351" positionY="-243" width="128" height="88"/>
-        <element name="Objective" positionX="124" positionY="-243" width="128" height="88"/>
         <element name="Evidence" positionX="-117" positionY="141" width="128" height="103"/>
+        <element name="Objective" positionX="124" positionY="-243" width="128" height="88"/>
+        <element name="Student" positionX="-351" positionY="-243" width="128" height="88"/>
     </elements>
 </model>
