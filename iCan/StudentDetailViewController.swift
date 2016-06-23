@@ -22,6 +22,10 @@ class StudentDetailViewController: UIViewController, UITableViewDataSource, UITa
         
         setUpFetchedResultsController()
         guard let student = student else { return }
+        updateWithStudent(student)
+    }
+    
+    func updateWithStudent(student: Student) {
         studentNameTextField.text = student.name
         ratioLabel.text = "\(student.numberPassed)/\(student.evidence.count)"
     }
@@ -48,6 +52,8 @@ class StudentDetailViewController: UIViewController, UITableViewDataSource, UITa
         if editingStyle == .Delete {
             guard let evidence = fetchedResultsController?.objectAtIndexPath(indexPath) as? Evidence else { return }
             EvidenceController.shared.deleteEvidence(evidence)
+            guard let student = student else { return }
+            updateWithStudent(student)
         }
     }
     

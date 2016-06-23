@@ -18,6 +18,8 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         setUpFetchedResultsController()
     }
     
+    
+    
     var fetchedResultsController: NSFetchedResultsController?
     private var collapseDetailViewController = true
     var addEvidence: Bool? = false
