@@ -13,15 +13,19 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
     var objective: Objective?
     @IBOutlet weak var objectiveTitleTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         guard let objective = objective else { return }
         updateWithObjective(objective)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if let titleText = objectiveTitleTextField.text,
+            objective = objective {
+            ObjectiveController.shared.updateObjective(objective, studentCan: titleText, notes: notesTextView.text)
+        }
         resignFirstResponder()
         return true
     }
@@ -37,7 +41,7 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
             studentCan = objectiveTitleTextField.text else { return }
         ObjectiveController.shared.updateObjective(objective, studentCan: studentCan, notes: notesTextView.text)
     }
-
+    
     @IBAction func clearButtonTapped(sender: AnyObject) {
         presentClearAlertController()
     }
