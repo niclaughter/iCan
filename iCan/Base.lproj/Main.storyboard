@@ -8,7 +8,6 @@
         <!--Default Detail View Controller-->
         <scene sceneID="st2-vk-HZc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xYv-8c-EqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NdS-KY-RzU" customClass="DefaultDetailViewController" customModule="iCan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EMi-9g-Bts"/>
@@ -21,6 +20,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5M3-kM-Ig3"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYv-8c-EqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1472" y="660"/>
         </scene>
@@ -326,7 +326,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="OK"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="140" y="0.0" width="104" height="132"/>
+                                            <rect key="frame" x="140" y="0.0" width="132" height="132"/>
                                         </variation>
                                         <connections>
                                             <action selector="okButtonTapped:" destination="Aee-c1-q0F" eventType="touchUpInside" id="Uib-Gs-lyD"/>
@@ -340,7 +340,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="YES"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="252" y="0.0" width="132" height="132"/>
+                                            <rect key="frame" x="280" y="0.0" width="104" height="132"/>
                                         </variation>
                                         <connections>
                                             <action selector="yesButtonTapped:" destination="Aee-c1-q0F" eventType="touchUpInside" id="k9B-xK-2yU"/>
@@ -416,13 +416,13 @@
         <!--Split View Controller-->
         <scene sceneID="33o-Cv-Rrs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="07Y-Wd-9yu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="eyy-LK-h58" sceneMemberID="viewController">
                     <connections>
                         <segue destination="mow-PR-5wL" kind="relationship" relationship="masterViewController" id="2KK-5J-a9Y"/>
                         <segue destination="VtB-DP-rVv" kind="relationship" relationship="detailViewController" id="FAt-V1-Lwi"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07Y-Wd-9yu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-105" y="199.5"/>
         </scene>
@@ -503,7 +503,6 @@
         <!--Navigation Controller-->
         <scene sceneID="fCI-UY-cbQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nAk-tK-k2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VtB-DP-rVv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hRd-vR-68L">
@@ -519,6 +518,7 @@
                         <segue destination="NdS-KY-RzU" kind="relationship" relationship="rootViewController" id="qyF-y0-cCK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAk-tK-k2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660" y="660"/>
         </scene>
