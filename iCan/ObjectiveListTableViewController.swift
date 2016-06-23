@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISplitViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        splitViewController?.delegate = self
         setUpFetchedResultsController()
     }
     
@@ -127,6 +128,7 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
                 student = student else { return }
             destinationVC.student = student
             destinationVC.objective = objective
+            destinationVC.fromStudentDetail = true
         }
     }
     

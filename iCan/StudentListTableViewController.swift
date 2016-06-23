@@ -129,6 +129,7 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
                 student = fetchedResultsController?.objectAtIndexPath(indexPath) as? Student else { return }
             destinationVC.student = student
             destinationVC.objective = objective
+            destinationVC.fromStudentDetail = false
         }
     }
     

@@ -13,16 +13,21 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     var student: Student?
     var objective: Objective?
     var rating: Int?
+    var fromStudentDetail = Bool()
     
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var studentNameLabel: UILabel!
+    @IBOutlet weak var objectiveTitleLabel: UILabel!
     
     weak var delegate: PhotoSelectViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        guard let student = student,
+            objective = objective else { return }
+        updateWithStudent(student, andObjective: objective)
     }
     
     // MARK: - IBActions
@@ -40,7 +45,11 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if fromStudentDetail {
+            performSegueWithIdentifier("studentDetailSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("objectiveDetailSegue", sender: self)
+        }
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
@@ -50,7 +59,11 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
             image = imageView.image,
             imageRepresentation = UIImagePNGRepresentation(image) else { return }
         EvidenceController.shared.createEvidence(imageRepresentation, competencyRating: rating, student: student, objective: objective)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if fromStudentDetail {
+            performSegueWithIdentifier("studentDetailSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("objectiveDetailSegue", sender: self)
+        }
     }
     
     @IBAction func selectPhotoButtonTapped() {
@@ -77,12 +90,29 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    func updateWithStudent(student: Student, andObjective: Objective) {
+        studentNameLabel.text = student.name
+        objectiveTitleLabel.text = andObjective.studentCan
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             delegate?.photoSelectViewControllerSelected(image)
             addPhotoButton.setTitle("", forState: .Normal)
             imageView.image = image
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "studentDetailSegue" {
+            guard let destinationVC = segue.destinationViewController as? StudentDetailViewController,
+                student = student else { return }
+            destinationVC.student = student
+        } else {
+            guard let destinationVC = segue.destinationViewController as? ObjectiveDetailViewController,
+                objective = objective else { return }
+            destinationVC.objective = objective
         }
     }
 }

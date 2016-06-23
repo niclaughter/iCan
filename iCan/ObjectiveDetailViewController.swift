@@ -18,14 +18,11 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         guard let objective = objective else { return }
-        objectiveTitleTextField.text = objective.studentCan
-        notesTextView.text = objective.notes
+        updateWithObjective(objective)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        guard let objective = objective,
-        objectiveTitleText = objectiveTitleTextField.text else { return false }
-        ObjectiveController.shared.updateObjective(objective, studentCan: objectiveTitleText, notes: notesTextView.text)
+        resignFirstResponder()
         return true
     }
     
@@ -36,9 +33,18 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
+        guard let objective = objective,
+            studentCan = objectiveTitleTextField.text else { return }
+        ObjectiveController.shared.updateObjective(objective, studentCan: studentCan, notes: notesTextView.text)
     }
 
     @IBAction func clearButtonTapped(sender: AnyObject) {
+        presentClearAlertController()
+    }
+    
+    func updateWithObjective(objective: Objective) {
+        objectiveTitleTextField.text = objective.studentCan
+        notesTextView.text = objective.notes
     }
     
     // MARK: - Navigation
@@ -47,5 +53,21 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
         guard let destinationVC = segue.destinationViewController as? StudentListTableViewController else { return }
         destinationVC.addEvidence = true
         destinationVC.objective = objective
+    }
+    
+    // MARK: - AlertController
+    
+    func presentClearAlertController() {
+        let alert = UIAlertController(title: "Clear info?", message: "Are you sure you'd like to clear this info?", preferredStyle: .Alert)
+        let yesAction = UIAlertAction(title: "Yes", style: .Destructive) { (_) in
+            self.objectiveTitleTextField.text = ""
+            self.notesTextView.text = ""
+            guard let objective = self.objective else { return }
+            ObjectiveController.shared.deleteObjective(objective)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        alert.addAction(yesAction)
+        alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
 }

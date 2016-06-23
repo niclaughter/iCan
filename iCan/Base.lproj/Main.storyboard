@@ -55,7 +55,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Aee-c1-q0F" kind="presentation" identifier="addEvidenceSegue" id="IBg-y8-2h9"/>
+                        <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="IBg-y8-2h9"/>
                         <segue destination="qEd-2U-fUY" kind="showDetail" identifier="studentDetailSegue" id="reF-xb-uGC"/>
                     </connections>
                 </tableViewController>
@@ -379,6 +379,10 @@
                     <connections>
                         <outlet property="addPhotoButton" destination="lQY-m3-3Zd" id="ucM-L8-rVY"/>
                         <outlet property="imageView" destination="L5P-7C-mJC" id="mKd-zf-MxM"/>
+                        <outlet property="objectiveTitleLabel" destination="0vS-Fe-fAr" id="n9W-U4-5JQ"/>
+                        <outlet property="studentNameLabel" destination="XTD-BD-Me1" id="e4Q-nR-hOV"/>
+                        <segue destination="qEd-2U-fUY" kind="showDetail" identifier="studentDetailSegue" id="66T-9S-jlj"/>
+                        <segue destination="z5P-7N-z8h" kind="showDetail" identifier="objectiveDetailSegue" id="FRj-6f-EN1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIp-5R-2Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -464,7 +468,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Aee-c1-q0F" kind="presentation" identifier="addEvidenceSegue" id="0y4-td-XIQ"/>
+                        <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="0y4-td-XIQ"/>
                         <segue destination="z5P-7N-z8h" kind="showDetail" identifier="objectiveDetailSegue" id="due-7n-hiU"/>
                     </connections>
                 </tableViewController>
@@ -520,8 +524,10 @@
         <image name="YES" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="66T-9S-jlj"/>
+        <segue reference="IBg-y8-2h9"/>
         <segue reference="1ap-Ku-8IR"/>
+        <segue reference="FRj-6f-EN1"/>
         <segue reference="wpZ-Wj-XTe"/>
-        <segue reference="vpY-SY-iBo"/>
     </inferredMetricsTieBreakers>
 </document>
