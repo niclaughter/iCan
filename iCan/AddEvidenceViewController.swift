@@ -33,6 +33,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
         
         if let evidence = evidence {
             updateWithEvidence(evidence)
+            addPhotoButton.setTitle("", forState: .Normal)
         }
     }
     

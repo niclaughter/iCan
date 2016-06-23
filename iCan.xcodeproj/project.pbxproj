@@ -12,6 +12,8 @@
 		669FCDC41D1887100090551D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC21D1887100090551D /* Main.storyboard */; };
 		669FCDC61D1887100090551D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC51D1887100090551D /* Assets.xcassets */; };
 		669FCDC91D1887100090551D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669FCDC71D1887100090551D /* LaunchScreen.storyboard */; };
+		66A104F21D1C84A00060990D /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A104F11D1C84A00060990D /* UIColorHelper.swift */; };
+		66A104F41D1C9C5F0060990D /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A104F31D1C9C5F0060990D /* AppearanceManager.swift */; };
 		66E64E9F1D18D3A800CA602E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66E64E9D1D18D3A800CA602E /* Model.xcdatamodeld */; };
 		66E64EA61D18DA9600CA602E /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA01D18DA9600CA602E /* Student+CoreDataProperties.swift */; };
 		66E64EA71D18DA9600CA602E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E64EA11D18DA9600CA602E /* Student.swift */; };
@@ -38,6 +40,8 @@
 		669FCDC51D1887100090551D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		669FCDC81D1887100090551D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		669FCDCA1D1887100090551D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66A104F11D1C84A00060990D /* UIColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
+		66A104F31D1C9C5F0060990D /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
 		66E64E9E1D18D3A800CA602E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		66E64EA01D18DA9600CA602E /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		66E64EA11D18DA9600CA602E /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				66E64EAE1D18DB2E00CA602E /* Model */,
 				669FCDC51D1887100090551D /* Assets.xcassets */,
 				669FCDC71D1887100090551D /* LaunchScreen.storyboard */,
+				66A104F11D1C84A00060990D /* UIColorHelper.swift */,
 				669FCDCA1D1887100090551D /* Info.plist */,
 			);
 			path = iCan;
@@ -122,6 +127,7 @@
 				66E64EB31D18DB7900CA602E /* ObjectiveListTableViewController.swift */,
 				66E64EB51D18DB8400CA602E /* ObjectiveDetailViewController.swift */,
 				66E64EB71D18DB9400CA602E /* AddEvidenceViewController.swift */,
+				66A104F31D1C9C5F0060990D /* AppearanceManager.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 				66E64EA91D18DA9600CA602E /* Evidence.swift in Sources */,
 				66E64E9F1D18D3A800CA602E /* Model.xcdatamodeld in Sources */,
 				66E64EA71D18DA9600CA602E /* Student.swift in Sources */,
+				66A104F41D1C9C5F0060990D /* AppearanceManager.swift in Sources */,
 				66E64EBF1D18DCCD00CA602E /* EvidenceController.swift in Sources */,
 				66E64EAB1D18DA9600CA602E /* Objective.swift in Sources */,
 				66E64EA81D18DA9600CA602E /* Evidence+CoreDataProperties.swift in Sources */,
@@ -226,6 +233,7 @@
 				66E64EB81D18DB9400CA602E /* AddEvidenceViewController.swift in Sources */,
 				66E64EAA1D18DA9600CA602E /* Objective+CoreDataProperties.swift in Sources */,
 				66E64EB41D18DB7900CA602E /* ObjectiveListTableViewController.swift in Sources */,
+				66A104F21D1C84A00060990D /* UIColorHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

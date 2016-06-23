@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class StudentDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class StudentDetailViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     var student: Student?
     var fetchedResultsController: NSFetchedResultsController?
@@ -30,6 +30,15 @@ class StudentDetailViewController: UIViewController, UITableViewDataSource, UITa
         ratioLabel.text = "\(student.numberPassed)/\(student.evidence.count)"
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if let nameText = studentNameTextField.text,
+            student = student {
+            StudentController.shared.updateStudent(student, name: nameText)
+        }
+        resignFirstResponder()
+        return true
+    }
+    
     // MARK: - IBAction
     
     @IBAction func addEvidenceButtonTapped(sender: AnyObject) {
@@ -45,6 +54,12 @@ class StudentDetailViewController: UIViewController, UITableViewDataSource, UITa
         let cell = UITableViewCell(style: .Default, reuseIdentifier: "evidenceCell")
         guard let evidence = student?.evidence[indexPath.row] as? Evidence else { return cell }
         cell.textLabel?.text = evidence.objective.studentCan
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        if (Int(indexPath.row) % 2 == 0) {
+            cell.backgroundColor = UIColor(netHex: 0x58595B)
+        } else {
+            cell.backgroundColor = UIColor(netHex: 0x6D6E71)
+        }
         return cell
     }
     

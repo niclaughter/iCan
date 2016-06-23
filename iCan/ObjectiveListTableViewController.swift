@@ -21,6 +21,7 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
     var fetchedResultsController: NSFetchedResultsController?
     var addEvidence: Bool? = false
     var student: Student?
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     // MARK: - IBAction
     
@@ -40,6 +41,12 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         let cell = tableView.dequeueReusableCellWithIdentifier("objectiveCell", forIndexPath: indexPath)
         if let objective = fetchedResultsController?.objectAtIndexPath(indexPath) as? Objective {
             cell.textLabel?.text = objective.studentCan
+        }
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        if (Int(indexPath.row) % 2 == 0) {
+            cell.backgroundColor = UIColor(netHex: 0x58595B)
+        } else {
+            cell.backgroundColor = UIColor(netHex: 0x6D6E71)
         }
         return cell
     }

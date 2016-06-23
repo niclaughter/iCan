@@ -13,17 +13,16 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         splitViewController?.delegate = self
         setUpFetchedResultsController()
     }
-    
-    
     
     var fetchedResultsController: NSFetchedResultsController?
     private var collapseDetailViewController = true
     var addEvidence: Bool? = false
     var objective: Objective?
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     // MARK: - IBAction
     
@@ -43,6 +42,12 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         let cell = tableView.dequeueReusableCellWithIdentifier("studentCell", forIndexPath: indexPath)
         if let student = fetchedResultsController?.objectAtIndexPath(indexPath) as? Student {
             cell.textLabel?.text = student.name
+        }
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        if (Int(indexPath.row) % 2 == 0) {
+            cell.backgroundColor = UIColor(netHex: 0x58595B)
+        } else {
+            cell.backgroundColor = UIColor(netHex: 0x6D6E71)
         }
         return cell
     }
