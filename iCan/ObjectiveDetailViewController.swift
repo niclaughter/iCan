@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectiveDetailViewController: UIViewController {
+class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
     
     var objective: Objective?
     @IBOutlet weak var objectiveTitleTextField: UITextField!
@@ -17,12 +17,16 @@ class ObjectiveDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let objective = objective else { return }
+        objectiveTitleTextField.text = objective.studentCan
+        notesTextView.text = objective.notes
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        guard let objective = objective,
+        objectiveTitleText = objectiveTitleTextField.text else { return false }
+        ObjectiveController.shared.updateObjective(objective, studentCan: objectiveTitleText, notes: notesTextView.text)
+        return true
     }
     
     // MARK: - IBAction

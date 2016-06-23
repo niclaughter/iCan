@@ -40,6 +40,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
