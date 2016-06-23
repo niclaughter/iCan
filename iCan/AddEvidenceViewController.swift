@@ -12,6 +12,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     
     var student: Student?
     var objective: Objective?
+    var evidence: Evidence?
     var rating: Int?
     var fromStudentDetail = Bool()
     
@@ -21,27 +22,38 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var objectiveTitleLabel: UILabel!
     
     weak var delegate: PhotoSelectViewControllerDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let student = student,
-            objective = objective else { return }
-        updateWithStudent(student, andObjective: objective)
+        if let student = student,
+            objective = objective {
+            updateWithStudent(student, andObjective: objective)
+        }
+        
+        if let evidence = evidence {
+            updateWithEvidence(evidence)
+        }
     }
     
     // MARK: - IBActions
     
     @IBAction func noButtonTapped(sender: AnyObject) {
         rating = 1
+        guard let objective = objective else { return }
+        objectiveTitleLabel.text = "\(objective.studentCan) - Not yet - rating 1/3"
     }
     
     @IBAction func okButtonTapped(sender: AnyObject) {
         rating = 2
+        guard let objective = objective else { return }
+        objectiveTitleLabel.text = "\(objective.studentCan) - Did okay - rating 2/3"
     }
     
     @IBAction func yesButtonTapped(sender: AnyObject) {
         rating = 3
+        guard let objective = objective else { return }
+        objectiveTitleLabel.text = "\(objective.studentCan) - Did great! - rating 3/3"
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
@@ -53,12 +65,19 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
-        guard let student = student,
-            objective = objective,
-            rating = rating,
-            image = imageView.image,
-            imageRepresentation = UIImagePNGRepresentation(image) else { return }
-        EvidenceController.shared.createEvidence(imageRepresentation, competencyRating: rating, student: student, objective: objective)
+        if let evidence = evidence {
+            guard let rating = rating,
+                image = imageView.image,
+                imageRepresentation = UIImagePNGRepresentation(image) else { return }
+            EvidenceController.shared.updateEvidence(evidence, imageData: imageRepresentation, competencyRating: rating)
+        } else {
+            guard let student = student,
+                objective = objective,
+                rating = rating,
+                image = imageView.image,
+                imageRepresentation = UIImagePNGRepresentation(image) else { return }
+            EvidenceController.shared.createEvidence(imageRepresentation, competencyRating: rating, student: student, objective: objective)
+        }
         if fromStudentDetail {
             performSegueWithIdentifier("studentDetailSegue", sender: self)
         } else {
@@ -93,6 +112,14 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     func updateWithStudent(student: Student, andObjective: Objective) {
         studentNameLabel.text = student.name
         objectiveTitleLabel.text = andObjective.studentCan
+    }
+    
+    func updateWithEvidence(evidence: Evidence) {
+        studentNameLabel.text = evidence.student.name
+        objectiveTitleLabel.text = "\(evidence.objective.studentCan) - Rating: \(evidence.competencyRating)"
+        imageView.image = evidence.photo
+        student = evidence.student
+        objective = evidence.objective
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {

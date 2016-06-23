@@ -13,6 +13,7 @@ import UIKit
 class Evidence: NSManagedObject {
 
     static let typeKey = "Evidence"
+    static let objectiveKey = "objective"
     
     convenience init(imageData: NSData, competencyRating: NSNumber, student: Student, objective: Objective, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName(Evidence.typeKey, inManagedObjectContext: context) else { fatalError("Failed to create entity from moc") }

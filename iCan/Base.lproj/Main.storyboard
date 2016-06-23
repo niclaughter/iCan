@@ -110,7 +110,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Aee-c1-q0F" kind="presentation" id="vpY-SY-iBo"/>
+                                            <segue destination="Aee-c1-q0F" kind="showDetail" identifier="evidenceDetailSegue" id="vpY-SY-iBo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -158,6 +158,7 @@
                     <connections>
                         <outlet property="ratioLabel" destination="S3P-X0-XQF" id="HXZ-LB-qOe"/>
                         <outlet property="studentNameTextField" destination="9pC-GI-ooq" id="odF-cY-Yp6"/>
+                        <outlet property="tableView" destination="6JR-gK-WdN" id="Szm-zX-HLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzU-yn-ULo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -525,9 +526,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="66T-9S-jlj"/>
-        <segue reference="IBg-y8-2h9"/>
-        <segue reference="1ap-Ku-8IR"/>
+        <segue reference="vpY-SY-iBo"/>
         <segue reference="FRj-6f-EN1"/>
+        <segue reference="1ap-Ku-8IR"/>
         <segue reference="wpZ-Wj-XTe"/>
     </inferredMetricsTieBreakers>
 </document>
