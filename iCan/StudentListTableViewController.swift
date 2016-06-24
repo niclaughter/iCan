@@ -16,6 +16,13 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
 
         splitViewController?.delegate = self
         setUpFetchedResultsController()
+        
+        performSegueWithIdentifier("blankDetailSegue", sender: self)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        performSegueWithIdentifier("blankDetailSegue", sender: self)
     }
     
     var fetchedResultsController: NSFetchedResultsController?
@@ -144,6 +151,11 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
     
     func presentAddStudentAlert() {
         let alert = UIAlertController(title: "Add a student", message: nil, preferredStyle: .Alert)
+        guard let subview = alert.view.subviews.first,
+            alertContentView = subview.subviews.first else { return }
+        alertContentView.backgroundColor = UIColor(netHex: 0x666666)
+        alertContentView.layer.cornerRadius = 5
+        alert.view.tintColor = UIColor(netHex: 0xA7A9AC)
         alert.addTextFieldWithConfigurationHandler { (name) in
             name.placeholder = "Student name"
             name.autocapitalizationType = .Words

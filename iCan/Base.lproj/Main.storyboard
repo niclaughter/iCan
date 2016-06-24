@@ -58,6 +58,7 @@
                         <outlet property="addButton" destination="dWg-KB-Z9G" id="rFL-SV-oJf"/>
                         <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="IBg-y8-2h9"/>
                         <segue destination="qEd-2U-fUY" kind="showDetail" identifier="studentDetailSegue" id="reF-xb-uGC"/>
+                        <segue destination="NdS-KY-RzU" kind="showDetail" identifier="blankDetailSegue" id="Yug-tu-87U"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwS-tj-ivb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,7 +130,7 @@
                                             <rect key="frame" x="180" y="29" width="240" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                            <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <outlet property="delegate" destination="qEd-2U-fUY" id="aBV-2b-5lv"/>
                                             </connections>
@@ -220,7 +221,7 @@
                                             <rect key="frame" x="180" y="29" width="240" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                            <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <outlet property="delegate" destination="z5P-7N-z8h" id="ch4-ag-8Ix"/>
                                             </connections>
@@ -261,7 +262,6 @@
         <!--Add Evidence View Controller-->
         <scene sceneID="RkK-Rl-ja8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KIp-5R-2Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="addEvidenceViewController" id="Aee-c1-q0F" customClass="AddEvidenceViewController" customModule="iCan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mcf-YY-2Xk"/>
@@ -403,6 +403,7 @@
                         <segue destination="z5P-7N-z8h" kind="showDetail" identifier="objectiveDetailSegue" id="FRj-6f-EN1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIp-5R-2Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3016" y="-1760"/>
         </scene>
@@ -464,7 +465,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="objectiveCell" id="110-5a-SND">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="110-5a-SND" id="1gx-xY-IDO">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -488,6 +489,7 @@
                         <outlet property="addButton" destination="VAH-PZ-Ar5" id="OcJ-Vf-e4v"/>
                         <segue destination="Aee-c1-q0F" kind="showDetail" identifier="addEvidenceSegue" id="0y4-td-XIQ"/>
                         <segue destination="z5P-7N-z8h" kind="showDetail" identifier="objectiveDetailSegue" id="due-7n-hiU"/>
+                        <segue destination="NdS-KY-RzU" kind="showDetail" identifier="blankDetailSegue" id="uDf-Zr-ljy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgS-mU-rIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -542,10 +544,11 @@
         <image name="YES" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vpY-SY-iBo"/>
-        <segue reference="66T-9S-jlj"/>
-        <segue reference="FRj-6f-EN1"/>
+        <segue reference="wpZ-Wj-XTe"/>
+        <segue reference="reF-xb-uGC"/>
         <segue reference="1ap-Ku-8IR"/>
-        <segue reference="NCL-pW-UcM"/>
+        <segue reference="due-7n-hiU"/>
+        <segue reference="Yug-tu-87U"/>
+        <segue reference="0y4-td-XIQ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -43,7 +43,7 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func clearButtonTapped(sender: AnyObject) {
-        presentClearAlertController()
+        presentClearAlertController(sender)
     }
     
     func updateWithObjective(objective: Objective) {
@@ -61,9 +61,15 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - AlertController
     
-    func presentClearAlertController() {
+    func presentClearAlertController(sender: AnyObject) {
         let alert = UIAlertController(title: "Clear info?", message: "Are you sure you'd like to clear this info?", preferredStyle: .Alert)
-        let yesAction = UIAlertAction(title: "Yes", style: .Destructive) { (_) in
+        if let popover = alert.popoverPresentationController,
+            sender = sender as? UIButton {
+            popover.sourceView = sender
+            popover.sourceRect = sender.bounds
+            popover.permittedArrowDirections = UIPopoverArrowDirection.Any
+        }
+        let yesAction = UIAlertAction(title: "Clear", style: .Destructive) { (_) in
             self.objectiveTitleTextField.text = ""
             self.notesTextView.text = ""
             guard let objective = self.objective else { return }

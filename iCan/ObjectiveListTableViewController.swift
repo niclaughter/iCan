@@ -10,12 +10,17 @@ import UIKit
 import CoreData
 
 class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISplitViewControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         splitViewController?.delegate = self
         setUpFetchedResultsController()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        performSegueWithIdentifier("blankDetailSegue", sender: self)
     }
     
     var fetchedResultsController: NSFetchedResultsController?
@@ -28,15 +33,15 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
     @IBAction func addObjectiveButtonTapped(sender: AnyObject) {
         presentAddObjectiveAlert()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else { return 0 }
         let sectionInfo = sections[section]
         return sectionInfo.numberOfObjects
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("objectiveCell", forIndexPath: indexPath)
         if let objective = fetchedResultsController?.objectAtIndexPath(indexPath) as? Objective {
@@ -110,7 +115,7 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
     }
- 
+    
     // MARK: - Navigation
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -121,7 +126,7 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
             performSegueWithIdentifier("objectiveDetailSegue", sender: self)
         }
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "objectiveDetailSegue" {
             guard let destinationVC = segue.destinationViewController as? ObjectiveDetailViewController,
@@ -143,6 +148,11 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
     
     func presentAddObjectiveAlert() {
         let alert = UIAlertController(title: "Add an objective", message: nil, preferredStyle: .Alert)
+        guard let subview = alert.view.subviews.first,
+            alertContentView = subview.subviews.first else { return }
+        alertContentView.backgroundColor = UIColor(netHex: 0x666666)
+        alertContentView.layer.cornerRadius = 5
+        alert.view.tintColor = UIColor(netHex: 0xA7A9AC)
         alert.addTextFieldWithConfigurationHandler { (studentCan) in
             studentCan.placeholder = "Student can..."
             studentCan.autocapitalizationType = .Sentences

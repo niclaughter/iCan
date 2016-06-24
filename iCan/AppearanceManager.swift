@@ -23,6 +23,7 @@ class AppearanceManager {
         UIToolbar.appearance().tintColor = UIColor(netHex: 0xA7A9AC)
         UIToolbar.appearance().barTintColor = UIColor(netHex: 0x3A3A3A)
         UITextField.appearance().backgroundColor = UIColor(netHex: 0x666666)
+        UITextField.appearance().textColor = UIColor.whiteColor()
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().barTintColor = UIColor(netHex: 0x2D2D2D)
     }
