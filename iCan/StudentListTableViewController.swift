@@ -20,11 +20,6 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         performSegueWithIdentifier("blankDetailSegue", sender: self)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        performSegueWithIdentifier("blankDetailSegue", sender: self)
-    }
-    
     var fetchedResultsController: NSFetchedResultsController?
     private var collapseDetailViewController = true
     var addEvidence: Bool? = false

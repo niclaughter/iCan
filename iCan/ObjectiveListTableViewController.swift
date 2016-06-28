@@ -18,11 +18,6 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         setUpFetchedResultsController()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        performSegueWithIdentifier("blankDetailSegue", sender: self)
-    }
-    
     var fetchedResultsController: NSFetchedResultsController?
     var addEvidence: Bool? = false
     var student: Student?

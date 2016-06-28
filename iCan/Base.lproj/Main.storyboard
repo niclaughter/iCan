@@ -129,6 +129,8 @@
                                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="natural" minimumFontSize="17" id="9pC-GI-ooq">
                                             <rect key="frame" x="180" y="29" width="240" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
@@ -220,6 +222,8 @@
                                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Objective Title" textAlignment="natural" minimumFontSize="17" id="cOg-3Z-wFk">
                                             <rect key="frame" x="180" y="29" width="240" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
@@ -539,16 +543,16 @@
     <resources>
         <image name="NO" width="225" height="225"/>
         <image name="OK" width="800" height="800"/>
-        <image name="Star" width="45" height="44"/>
-        <image name="Student" width="42" height="49"/>
+        <image name="Star" width="22" height="22"/>
+        <image name="Student" width="21" height="24"/>
         <image name="YES" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="due-7n-hiU"/>
         <segue reference="wpZ-Wj-XTe"/>
         <segue reference="reF-xb-uGC"/>
         <segue reference="1ap-Ku-8IR"/>
-        <segue reference="due-7n-hiU"/>
-        <segue reference="Yug-tu-87U"/>
-        <segue reference="0y4-td-XIQ"/>
+        <segue reference="vpY-SY-iBo"/>
+        <segue reference="uDf-Zr-ljy"/>
     </inferredMetricsTieBreakers>
 </document>
