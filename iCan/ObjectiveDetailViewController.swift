@@ -37,10 +37,6 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate, UITe
     
     // MARK: - IBAction
     
-    @IBAction func addEvidenceButtonTapped(sender: AnyObject) {
-        
-    }
-    
     @IBAction func saveButtonTapped(sender: AnyObject) {
         guard let objective = objective,
             studentCan = objectiveTitleTextField.text else { return }

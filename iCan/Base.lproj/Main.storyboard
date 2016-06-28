@@ -119,7 +119,6 @@
                                         </textField>
                                         <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="uYs-qX-V6H">
                                             <connections>
-                                                <action selector="addEvidenceButtonTapped:" destination="qEd-2U-fUY" id="tw6-sC-eeN"/>
                                                 <segue destination="Gmo-9V-uzv" kind="showDetail" identifier="addSegue" id="wpZ-Wj-XTe"/>
                                             </connections>
                                         </barButtonItem>
@@ -221,7 +220,6 @@
                                         </textField>
                                         <barButtonItem key="rightBarButtonItem" title="Add Evidence" id="Lfc-Zf-UpP">
                                             <connections>
-                                                <action selector="addEvidenceButtonTapped:" destination="z5P-7N-z8h" id="e0L-lO-Zj4"/>
                                                 <segue destination="x1i-gw-ECW" kind="showDetail" identifier="addSegue" id="1ap-Ku-8IR"/>
                                             </connections>
                                         </barButtonItem>
@@ -537,11 +535,11 @@
         <image name="YES" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="due-7n-hiU"/>
-        <segue reference="wpZ-Wj-XTe"/>
+        <segue reference="vpY-SY-iBo"/>
         <segue reference="reF-xb-uGC"/>
         <segue reference="1ap-Ku-8IR"/>
-        <segue reference="vpY-SY-iBo"/>
+        <segue reference="FRj-6f-EN1"/>
+        <segue reference="wpZ-Wj-XTe"/>
         <segue reference="uDf-Zr-ljy"/>
     </inferredMetricsTieBreakers>
 </document>

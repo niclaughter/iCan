@@ -16,8 +16,6 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
 
         splitViewController?.delegate = self
         setUpFetchedResultsController()
-        
-        performSegueWithIdentifier("blankDetailSegue", sender: self)
     }
     
     var fetchedResultsController: NSFetchedResultsController?

@@ -39,11 +39,6 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate, UITabl
         return true
     }
     
-    // MARK: - IBAction
-    
-    @IBAction func addEvidenceButtonTapped(sender: AnyObject) {
-    }
-    
     // MARK: - TableViewDataSource and Delegate
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
