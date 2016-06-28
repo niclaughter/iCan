@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
+class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var objective: Objective?
     @IBOutlet weak var objectiveTitleTextField: UITextField!
@@ -27,6 +27,11 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate {
             ObjectiveController.shared.updateObjective(objective, studentCan: titleText, notes: notesTextView.text)
         }
         resignFirstResponder()
+        return true
+    }
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        notesTextView.text = nil
         return true
     }
     

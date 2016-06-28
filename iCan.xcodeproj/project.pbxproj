@@ -121,12 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				669FCDC21D1887100090551D /* Main.storyboard */,
-				663819B51D1B490C003B2530 /* DefaultDetailViewController.swift */,
 				66E64EAF1D18DB4D00CA602E /* StudentListTableViewController.swift */,
 				66E64EB11D18DB6900CA602E /* StudentDetailViewController.swift */,
 				66E64EB31D18DB7900CA602E /* ObjectiveListTableViewController.swift */,
 				66E64EB51D18DB8400CA602E /* ObjectiveDetailViewController.swift */,
 				66E64EB71D18DB9400CA602E /* AddEvidenceViewController.swift */,
+				663819B51D1B490C003B2530 /* DefaultDetailViewController.swift */,
 				66A104F31D1C9C5F0060990D /* AppearanceManager.swift */,
 			);
 			name = ViewController;

@@ -143,11 +143,6 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
     
     func presentAddObjectiveAlert() {
         let alert = UIAlertController(title: "Add an objective", message: nil, preferredStyle: .Alert)
-        guard let subview = alert.view.subviews.first,
-            alertContentView = subview.subviews.first else { return }
-        alertContentView.backgroundColor = UIColor(netHex: 0x666666)
-        alertContentView.layer.cornerRadius = 5
-        alert.view.tintColor = UIColor(netHex: 0xA7A9AC)
         alert.addTextFieldWithConfigurationHandler { (studentCan) in
             studentCan.placeholder = "Student can..."
             studentCan.autocapitalizationType = .Sentences

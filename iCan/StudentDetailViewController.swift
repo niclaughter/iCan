@@ -27,7 +27,7 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate, UITabl
     
     func updateWithStudent(student: Student) {
         studentNameTextField.text = student.name
-        ratioLabel.text = "\(student.numberPassed)/\(student.evidence.count)"
+        ratioLabel.text = "\(student.numberPassed) passed - \(student.evidence.count) total"
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
