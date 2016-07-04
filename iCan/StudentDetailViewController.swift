@@ -46,9 +46,19 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: "evidenceCell")
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "evidenceCell")
         guard let evidence = student?.evidence[indexPath.row] as? Evidence else { return cell }
         cell.textLabel?.text = evidence.objective.studentCan
+        if evidence.competencyRating == 1 {
+            cell.detailTextLabel?.text = "Not yet."
+            cell.detailTextLabel?.textColor = UIColor.redColor()
+        } else if evidence.competencyRating == 2 {
+            cell.detailTextLabel?.text = "Passed, but needs work."
+            cell.detailTextLabel?.textColor = UIColor.yellowColor()
+        } else {
+            cell.detailTextLabel?.text = "iCan!"
+            cell.detailTextLabel?.textColor = UIColor.greenColor()
+        }
         cell.textLabel?.textColor = UIColor.whiteColor()
         if (Int(indexPath.row) % 2 == 0) {
             cell.backgroundColor = UIColor(netHex: 0x58595B)

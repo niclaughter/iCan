@@ -16,6 +16,17 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         
         splitViewController?.delegate = self
         setUpFetchedResultsController()
+        
+        if student != nil {
+            tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if student == nil {
+            performSegueWithIdentifier("blankDetailSegue", sender: self)
+        }
     }
     
     var fetchedResultsController: NSFetchedResultsController?
@@ -34,6 +45,9 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else { return 0 }
         let sectionInfo = sections[section]
+        if student != nil && sectionInfo.numberOfObjects < 1 {
+            presentAddFirstObjectiveAlert()
+        }
         return sectionInfo.numberOfObjects
     }
     
@@ -94,9 +108,11 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         case .Delete:
             guard let indexPath = indexPath else {return}
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            tableView.reloadData()
         case .Insert:
             guard let newIndexPath = newIndexPath else {return}
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+            tableView.reloadData()
         case .Move:
             guard let indexPath = indexPath,
                 newIndexPath = newIndexPath else {return}
@@ -156,6 +172,14 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func presentAddFirstObjectiveAlert() {
+        let alert = UIAlertController(title: "Add your first Objective!", message: "Tap on the \"Objectives\" section and add your first Objective.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: { (_) in
+            self.performSegueWithIdentifier("blankDetailSegue", sender: self)
+        }))
         presentViewController(alert, animated: true, completion: nil)
     }
 }

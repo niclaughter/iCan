@@ -16,6 +16,17 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
 
         splitViewController?.delegate = self
         setUpFetchedResultsController()
+        
+        if objective != nil {
+            tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if objective == nil {
+            performSegueWithIdentifier("blankDetailSegue", sender: self)
+        }
     }
     
     var fetchedResultsController: NSFetchedResultsController?
@@ -35,6 +46,9 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else { return 0 }
         let sectionInfo = sections[section]
+        if objective != nil && sectionInfo.numberOfObjects < 1 {
+            presentAddFirstStudentAlert()
+        }
         return sectionInfo.numberOfObjects
     }
     
@@ -42,6 +56,11 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         let cell = tableView.dequeueReusableCellWithIdentifier("studentCell", forIndexPath: indexPath)
         if let student = fetchedResultsController?.objectAtIndexPath(indexPath) as? Student {
             cell.textLabel?.text = student.name
+            if student.evidence.count > 0 {
+                cell.detailTextLabel?.text = "\(Int((Double(student.numberPassed) / Double(student.evidence.count) * 100)))%"
+            } else {
+                cell.detailTextLabel?.text = ""
+            }
         }
         cell.textLabel?.textColor = UIColor.whiteColor()
         if (Int(indexPath.row) % 2 == 0) {
@@ -95,9 +114,11 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         case .Delete:
             guard let indexPath = indexPath else {return}
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            tableView.reloadData()
         case .Insert:
             guard let newIndexPath = newIndexPath else {return}
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+            tableView.reloadData()
         case .Move:
             guard let indexPath = indexPath,
                 newIndexPath = newIndexPath else {return}
@@ -157,6 +178,14 @@ class StudentListTableViewController: UITableViewController, NSFetchedResultsCon
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func presentAddFirstStudentAlert() {
+        let alert = UIAlertController(title: "Add your first Student!", message: "Tap on the \"Students\" section and add your first Student.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: { (_) in
+            self.performSegueWithIdentifier("blankDetailSegue", sender: self)
+        }))
         presentViewController(alert, animated: true, completion: nil)
     }
 }
