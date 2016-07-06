@@ -35,6 +35,7 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate, UITabl
             student = student {
             StudentController.shared.updateStudent(student, name: nameText)
         }
+        presentChangesAlert()
         resignFirstResponder()
         return true
     }
@@ -148,5 +149,13 @@ class StudentDetailViewController: UIViewController, UITextFieldDelegate, UITabl
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
+    }
+    
+    // MARK: - Alert
+    
+    func presentChangesAlert() {
+        let alert = UIAlertController(title: "Change Successful", message: "Changes won't appear until next time the app is launched.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
     }
 }

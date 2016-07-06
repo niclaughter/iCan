@@ -17,6 +17,9 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         splitViewController?.delegate = self
         setUpFetchedResultsController()
         
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         if student != nil {
             tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
         }
@@ -120,6 +123,7 @@ class ObjectiveListTableViewController: UITableViewController, NSFetchedResultsC
         case .Update:
             guard let indexPath = indexPath else {return}
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            tableView.reloadData()
         }
     }
     

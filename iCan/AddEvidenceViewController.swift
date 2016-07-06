@@ -40,21 +40,26 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - IBActions
     
     @IBAction func noButtonTapped(sender: AnyObject) {
-        rating = 1
-        guard let objective = objective else { return }
-        objectiveTitleLabel.text = "\(objective.studentCan) - Not yet - rating 1/3"
+        resetRatingLabel(1, ratingLabelText: "Not yet - rating 1/3")
     }
     
     @IBAction func okButtonTapped(sender: AnyObject) {
-        rating = 2
-        guard let objective = objective else { return }
-        objectiveTitleLabel.text = "\(objective.studentCan) - Did okay - rating 2/3"
+        resetRatingLabel(2, ratingLabelText: "Pass - rating 2/3")
     }
     
     @IBAction func yesButtonTapped(sender: AnyObject) {
-        rating = 3
-        guard let objective = objective else { return }
-        objectiveTitleLabel.text = "\(objective.studentCan) - Did great! - rating 3/3"
+        resetRatingLabel(3, ratingLabelText: "Did great! - rating 3/3")
+    }
+    
+    func resetRatingLabel(rating: Int, ratingLabelText: String) {
+        if self.rating == rating {
+            self.rating = nil
+            guard let objective = objective else { return }
+            objectiveTitleLabel.text = objective.studentCan
+        } else {
+            self.rating = rating
+            objectiveTitleLabel.text = ratingLabelText
+        }
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
@@ -96,6 +101,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
                 self.presentViewController(imagePicker, animated: true, completion: nil)
             }))
         }
+        // TODO: - Figure out why taking a picture doesn't give the image to the controller. - check viewwilldisappear for masters and didfinishpickingmediawithinfo
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
             alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (_) in
                 imagePicker.sourceType = .Camera
@@ -121,6 +127,7 @@ class AddEvidenceViewController: UIViewController, UIImagePickerControllerDelega
         imageView.image = evidence.photo
         student = evidence.student
         objective = evidence.objective
+        rating = Int(evidence.competencyRating)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {

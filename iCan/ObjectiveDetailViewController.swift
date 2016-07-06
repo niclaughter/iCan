@@ -26,6 +26,7 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate, UITe
             objective = objective {
             ObjectiveController.shared.updateObjective(objective, studentCan: titleText, notes: notesTextView.text)
         }
+        presentChangesAlert()
         resignFirstResponder()
         return true
     }
@@ -41,6 +42,7 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate, UITe
         guard let objective = objective,
             studentCan = objectiveTitleTextField.text else { return }
         ObjectiveController.shared.updateObjective(objective, studentCan: studentCan, notes: notesTextView.text)
+        presentChangesAlert()
     }
     
     @IBAction func clearButtonTapped(sender: AnyObject) {
@@ -79,6 +81,12 @@ class ObjectiveDetailViewController: UIViewController, UITextFieldDelegate, UITe
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
         alert.addAction(yesAction)
         alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func presentChangesAlert() {
+        let alert = UIAlertController(title: "Change Successful", message: "Changes won't appear until next time the app is launched.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
     }
 }
